@@ -1,7 +1,4 @@
-# F1TENTH gym environment ROS communication bridge
-This is a containerized ROS communication bridge for F1TENTH gym environment.
-
-This project is still under heavy developement.
+We are trying to combine reinforcement learning and trajectory optimization to win in F 1/10 racing.
 
 # Overview
 
