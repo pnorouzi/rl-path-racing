@@ -4,7 +4,7 @@ This is the package for milestone2
 
 for race:
 ```
-roslaunch team5 race.launch
+roslaunch first_race race.launch
 ```
 
 ### launch 
