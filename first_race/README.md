@@ -1,4 +1,4 @@
-This is the package for milestone2
+This is our package for Project Milestone 2
 
 ## Usage
 
