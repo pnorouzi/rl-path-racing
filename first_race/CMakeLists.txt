@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(team5)
+project(first_race)
 find_package(catkin REQUIRED COMPONENTS
   ackermann_msgs
   geometry_msgs

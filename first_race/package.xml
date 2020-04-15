@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>team5</name>
+  <name>first_race</name>
   <version>0.0.0</version>
-  <description>team5</description>
+  <description>first_race</description>
   <maintainer email="druhvkar@seas.upenn.edu">Dhruv Karthik</maintainer>
   <license>MIT</license>
 
