@@ -30,8 +30,5 @@ roslaunch team5 race.launch
   - spline.py
   - multiwpi.csv 
 
-<img src="/waypoints/Multi-Paths/paths.png" />
-
+<img src="waypoints/Multi-Paths/paths.png" />
 using scipy.interpolate.splprep to generate multiple paths, in our cases, we generate 10 for the use of RL.
-
- 
