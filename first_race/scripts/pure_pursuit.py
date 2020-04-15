@@ -80,15 +80,15 @@ class PurePursuit(object):
 
     def select_velocity(self, angle):
         if abs(angle) <= 5*math.pi/180:
-            velocity  = 4
+            velocity  = 4.5
         elif abs(angle) <= 10*math.pi/180:
-            velocity  = 4.0
+            velocity  = 4.5
         elif abs(angle) <= 15*math.pi/180:
-            velocity = 4.0
+            velocity = 4.5
         elif abs(angle) <= 20*math.pi/180:
             velocity = 4.0
         else:
-            velocity = 3.0
+            velocity = 3.7
         return velocity
 
 if __name__ == '__main__':
