@@ -12,9 +12,9 @@ import tf
 import math
 import sys
 
-path = os.path.dirname(os.path.abspath(__file__)) + '/../log/'
-waypoint = np.loadtxt(path +  os.listdir(path)[0], ndmin=2,delimiter=',')
-FORWARD = 0.8
+path = os.path.dirname(os.path.abspath(__file__)) + '/../waypoints/multiwp-new.csv'
+waypoint = np.loadtxt(path, ndmin=2,delimiter=',')
+FORWARD = 0.85
 
 class PurePursuit(object):
     """
@@ -51,7 +51,7 @@ class PurePursuit(object):
             goalx_veh = math.cos(euler[2])*l2_0[0] + math.sin(euler[2])*l2_0[1]
             goaly_veh = -math.sin(euler[2])*l2_0[0] + math.cos(euler[2])*l2_0[1]
 
-            if abs(math.atan(goalx_veh/goaly_veh)) <  0.75*np.pi/2 and goalx_veh>0 :
+            if abs(math.atan(goalx_veh/goaly_veh)) <  np.pi/2 and goalx_veh>0 :
                  self.waypoint = waypoint[index] 
                  #print("point find ", index)
                  break
@@ -82,13 +82,13 @@ class PurePursuit(object):
         if abs(angle) <= 5*math.pi/180:
             velocity  = 4
         elif abs(angle) <= 10*math.pi/180:
-            velocity  = 3.5
+            velocity  = 4.0
         elif abs(angle) <= 15*math.pi/180:
-            velocity = 3
+            velocity = 4.0
         elif abs(angle) <= 20*math.pi/180:
-            velocity = 2.5
+            velocity = 4.0
         else:
-            velocity = 2
+            velocity = 3.0
         return velocity
 
 if __name__ == '__main__':

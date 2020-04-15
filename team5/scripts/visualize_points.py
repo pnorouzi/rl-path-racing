@@ -11,8 +11,8 @@ import csv
 import pdb
 import numpy as np
 
-dirname = os.path.dirname(os.path.abspath(__file__)) + '/../log/'
-filename = dirname +  os.listdir(dirname)[0]
+dirname = os.path.dirname(os.path.abspath(__file__)) + '/../waypoints/multiwp-new.csv'
+filename = dirname
 
 waypoints = np.loadtxt(filename, ndmin=2,delimiter=',')
 
