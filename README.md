@@ -1,6 +1,6 @@
 # Racing Using SQN Reinforcement Learning
 
-We are trying to combine reinforcement learning and trajectory optimization to win in F 1/10 racing.
+We are trying to combine reinforcement learning and trajectory optimization to win in F 1/10 racing. This repository is under heavy development and is not yet stable for any usecase.
 
 ## Proposal:
 
