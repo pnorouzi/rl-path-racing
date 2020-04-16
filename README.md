@@ -4,7 +4,7 @@ We are trying to combine reinforcement learning and trajectory optimization to w
 
 ## Proposal:
 
-You can read our proposal here:
+You can read our proposal here: [Proposal](files/Proposal.pdf)
 
 ## Milestone 2 (Race one):
 
