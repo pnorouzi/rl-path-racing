@@ -10,6 +10,10 @@ You can read our proposal here:
 
 The only purpose is to complete going around the race track in shortest time possible. There are not any other competitors in the race. We found the shortest path around the track (using b-spline) and are using pure pursuit algorithm to track the path around the track. Uisng the old f110 simulator you can see the purformance of our method around the track (the optimized path is pink) :
 
+<p align="center">
+  <img src="first_race/videos/first_race.gif">
+</p>
+
 
 We have included both the new and old f110 simulators in this repository. Make sure that the new simulator pre requisites are properly installed (docker,etc.).
 
