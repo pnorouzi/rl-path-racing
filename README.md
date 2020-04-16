@@ -33,6 +33,10 @@ In addition to finishing the requirisites for the first race, we have completed 
 
   *  We created 10 lanes that go around the track (used for the action space of our RL) and you can see them below:
   
+  <p align="center">
+  <img src="first_race/waypoints/Multi-Paths/paths.png">
+</p>
+  
   
   *  We Implemented the foundation/structure of SQN for training. This includes defining appropriate observation state and possible reward structure
   *  We are almost done with integrating pure pursuit with RL structure so that we can take RL output and act on it and control the car appropritely
