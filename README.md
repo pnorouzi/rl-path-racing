@@ -5,6 +5,8 @@ We are trying to combine reinforcement learning and trajectory optimization to w
 ## Milestone 1 Proposal:
 
 You can read our proposal here: [Proposal](docs/Proposal.pdf)
+Soft Q Network training of RL agent for high level decision making. https://github.com/christopher-hsu/f1tenth-spinningup
+
 
 ## Milestone 2 (Race one):
 
