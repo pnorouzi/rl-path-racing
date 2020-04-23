@@ -69,9 +69,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 8.730120658874512
+      Max Intensity: 10.65738582611084
       Min Color: 0; 0; 225
-      Min Intensity: 0.12252096086740494
+      Min Intensity: 0.9184106588363647
       Name: LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -229,6 +229,14 @@ Visualization Manager:
       Transport Hint: raw
       Unreliable: false
       Value: false
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /visualization_marker_array
+      Name: MarkerArray
+      Namespaces:
+        "": true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -272,10 +280,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.1897966861724854
+      Pitch: 1.244796633720398
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.193576812744141
+      Yaw: 4.043575763702393
     Saved: ~
 Window Geometry:
   Displays:
