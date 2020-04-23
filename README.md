@@ -66,7 +66,13 @@ In addition to finishing the prerequisites for the first race, we have completed
   <p align="center">
   <img src="first_race/waypoints/Multi-Paths/paths.png">
 </p>
+
+  *  We then created more lanes in order to cover more of the track.
   
+  <p align="center">
+  <img src="second_race/waypoints/Multi-Paths2/paths.png">
+</p>
+ 
   
   *  We Implemented the foundation/structure of SQN for training. This includes defining appropriate observation state and possible reward structure
   *  We are done with integrating pure pursuit with RL structure so that we can take RL output and act on it and control the car appropritely
