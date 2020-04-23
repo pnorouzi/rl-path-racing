@@ -17,6 +17,8 @@ The only purpose is to complete going around the race track in shortest time pos
 
 ## Milestone 3 (Race two):
 
+The main goal is to drive safely around the track by avoiding obstacles. The method we used to approach this problem is with a high level ttc style calculation to decide on which path provides the most space. We follow the waypoint associated with the best ttc path with pure pursuit in get a steering angle and velocity.  
+
 <p align="center">
   <img src="second_race/videos/second_race.gif">
 </p>
@@ -24,6 +26,7 @@ The only purpose is to complete going around the race track in shortest time pos
 
 
 
+## Logistics
 
 We have included both the new and old f110 simulators in this repository. Make sure that the new simulator pre requisites are properly installed (docker,etc.).
 
