@@ -15,6 +15,16 @@ The only purpose is to complete going around the race track in shortest time pos
 </p>
 
 
+## Milestone 3 (Race two):
+
+<p align="center">
+  <img src="second_race/videos/second_race.gif">
+</p>
+
+
+
+
+
 We have included both the new and old f110 simulators in this repository. Make sure that the new simulator pre requisites are properly installed (docker,etc.).
 
 To run our code:
