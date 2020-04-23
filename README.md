@@ -2,7 +2,7 @@
 
 We are trying to combine reinforcement learning and trajectory optimization to win in F 1/10 racing. This repository is under heavy development and is not yet stable for any usecase.
 
-## Proposal:
+## Milestone 1 Proposal:
 
 You can read our proposal here: [Proposal](docs/Proposal.pdf)
 
