@@ -115,7 +115,7 @@ class MultiLanePPWObject(object):
 
 
         waypoint_angle_car_idx = int((waypoint_angle_car+np.pi)/(self.angles[1]-self.angles[0]))
-        waypoint_angle_car_idx = np.minimum(waypoint_angle_car_idx,self.ranges.shape[0])
+        waypoint_angle_car_idx = np.minimum(waypoint_angle_car_idx,self.ranges.shape[0]-1)
         waypoint_angle_car_idx = np.maximum(waypoint_angle_car_idx,0)
         min_val = self.ranges[waypoint_angle_car_idx]
 
@@ -130,7 +130,7 @@ class MultiLanePPWObject(object):
             max_idx = int((waypoint_angle_car+angle_circle-self.angles[0])/(self.angles[1]-self.angles[0]))
 
         lower_idx_0 = np.maximum(min_idx,0)    ##Look into this because of wrapping
-        upper_idx_0 = np.minimum(max_idx,self.ranges.shape[0])  ##Look into this because of wrapping
+        upper_idx_0 = np.minimum(max_idx,self.ranges.shape[0]-1)  ##Look into this because of wrapping
 
 
         TTC_denom = (self.speed*np.cos(self.angles[lower_idx_0:upper_idx_0]))
