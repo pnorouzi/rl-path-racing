@@ -26,8 +26,8 @@ for i in paths:
     waypoints[count,:,:] = np.loadtxt(path, ndmin=2,delimiter=',')
     count+= 1
 
-FORWARD = 0.98
-safety_radius = 0.1
+FORWARD = 1
+safety_radius = 0.15
 TTC_threshold= 0.65
 
 
@@ -44,7 +44,6 @@ class MultiLanePPWObject(object):
 
         self.path_waypoints = np.zeros((len(paths),2))
 
-        # self.current_path = 8
 
         first_scan = rospy.wait_for_message(lidarscan_topic,LaserScan,2.0)
         self.ranges = np.array(first_scan.ranges)
@@ -75,10 +74,6 @@ class MultiLanePPWObject(object):
     def lidar_callback(self, lidar_msg):
         self.ranges = np.array(lidar_msg.ranges)
         self.angles = np.linspace(lidar_msg.angle_min, lidar_msg.angle_max, num=self.ranges.shape[0])
-        # min_270_idx = int((-135+180)*(np.pi/180)/(angles[1]-angles[0]))
-        # max_270_idx = int((135+180)*(np.pi/180)/(angles[1]-angles[0]))
-        
-        # print(angles[0])
 
 
     def find_waypoints(self,waypoints_new):
