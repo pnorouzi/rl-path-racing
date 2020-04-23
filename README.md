@@ -39,7 +39,7 @@ To run our code:
 
 Then run the following depending on which simulator you are planning on using:
 
-#### Race one:single car, no obstacles 
+#### Race one: single car, no obstacles 
 For the old simulator:
 
   *  Run the following in a new terminal: `roslaunch first_race race_old.launch`
