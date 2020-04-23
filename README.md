@@ -39,6 +39,7 @@ To run our code:
 
 Then run the following depending on which simulator you are planning on using:
 
+#Race one:single car, no obstacles 
 For the old simulator:
 
   *  Run the following in a new terminal: `roslaunch first_race race_old.launch`
@@ -48,8 +49,17 @@ For the new simulator:
   *  Go to `f1tenth_gym_ros` folder and run the following in a new terminal: `sudo ./docker.sh`
   *  Run the following in a new terminal: `roslaunch first_race race_new.launch`
 
+#Race two: single car, obstacles
+For the old simulator:
 
-In addition to finishing the requirisites for the first race, we have completed the following milestones preparing for the final race:
+  *  Run the following in a new terminal: `roslaunch second_race race_old.launch`
+
+For the new simulator:
+
+  *  Go to `f1tenth_gym_ros` folder and run the following in a new terminal: `sudo ./docker.sh`
+  *  Run the following in a new terminal: `roslaunch second_race race_new.launch`
+  
+In addition to finishing the prerequisites for the first race, we have completed the following milestones preparing for the final race:
 
   *  We created 10 lanes that go around the track (used for the action space of our RL) and you can see them below:
   
@@ -59,6 +69,9 @@ In addition to finishing the requirisites for the first race, we have completed 
   
   
   *  We Implemented the foundation/structure of SQN for training. This includes defining appropriate observation state and possible reward structure
-  *  We are almost done with integrating pure pursuit with RL structure so that we can take RL output and act on it and control the car appropritely
+  *  We are done with integrating pure pursuit with RL structure so that we can take RL output and act on it and control the car appropritely
+  *  We are shifting to a local coordinate frame and including all sensor reading for the RL observation state.
+  *  We will integrate the TTC path selector into the RL framework
+  *  Reward shaping
   
   
