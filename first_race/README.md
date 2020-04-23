@@ -5,7 +5,7 @@ This is our package for Project Milestone 2
 The only purpose is to complete going around the race track in shortest time possible. There are not any other competitors in the race. We found the shortest path around the track (using b-spline) and are using pure pursuit algorithm to track the path around the track. Uisng the old f110 simulator you can see the purformance of our method around the track (the optimized path is pink) :
 
 <p align="center">
-  <img src="first_race/videos/first_race.gif">
+  <img src="videos/first_race.gif">
 </p>
 
 
@@ -32,7 +32,7 @@ In addition to finishing the requirisites for the first race, we have completed 
   *  We created 10 lanes that go around the track (used for the action space of our RL) and you can see them below:
   
   <p align="center">
-  <img src="first_race/waypoints/Multi-Paths/paths.png">
+  <img src="waypoints/Multi-Paths/paths.png">
 </p>
   
   
