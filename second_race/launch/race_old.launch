@@ -45,7 +45,7 @@
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find f110_simulator)/launch/simulator.rviz" output="screen"/>
 
 <node pkg="second_race" type="MultiLanePPWObject.py" name="MultiLanePPWObject" output="screen"/>
-
-<node pkg="second_race" type="visualize_points.py" name="visualize_points" output="screen"/>
+<!-- 
+<node pkg="second_race" type="visualize_points.py" name="visualize_points" output="screen"/> -->
 
 </launch>
