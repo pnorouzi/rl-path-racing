@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  
+<include file="$(find f1tenth_gym_ros)/launch/gym_bridge_host.launch"/>
+
+<node pkg="first_race" type="wall_follow.py" name="wall_follow" output="screen"/>
+<node pkg="first_race" type="waypoint_logger.py" name="waypoint_logger" output="screen"/>
+
+</launch>

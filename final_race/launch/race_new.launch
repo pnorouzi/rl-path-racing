@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  
+<include file="$(find f1tenth_gym_ros)/launch/gym_bridge_host.launch"/>
+
+<node pkg="final_race" type="final.py" name="SqnDriver" output="screen"/>
+
+<!-- <node pkg="second_race" type="visualize_points.py" name="visualize_points" output="screen"/> -->
+
+</launch>
