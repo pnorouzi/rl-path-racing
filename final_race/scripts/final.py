@@ -374,25 +374,27 @@ class SqnDriver(object):
 
         if action in self.aval_paths:
             self.waypoint = self.path_waypoints[action,:2]
-            # goal_veh= self.global_to_car(self.waypoint, position,pose_theta )
+            #our purepursuit
+            goal_veh= self.global_to_car(self.waypoint, position, pose_theta)
 
-            # L = np.sqrt((self.waypoint[0]-position[0])**2 +  (self.waypoint[0]-position[1])**2 )
+            L = np.sqrt((self.waypoint[0]-position[0])**2 +  (self.waypoint[1]-position[1])**2 )
 
-            # arc = 2*goal_veh[1]/(L**2)
-            # angle = 0.33*arc
-            # steering_angle = np.clip(angle, -0.4, 0.4)
-            # speed = self.select_velocity(steering_angle)
+            arc = 2*goal_veh[1]/(L**2)
+            angle = 0.33*arc
+            steering_angle = np.clip(angle, -0.4, 0.4)
+            speed = self.select_velocity(steering_angle)
 
-            waypoint_y = np.dot(np.array([np.sin(-pose_theta), np.cos(-pose_theta)]), self.waypoint-position)
+            #instructures pure pursuit
+            # waypoint_y = np.dot(np.array([np.sin(-pose_theta), np.cos(-pose_theta)]), self.waypoint-position)
 
             # if np.abs(waypoint_y) < 1e-6:
             #   steering_angle= 0.
             #   speed = 0.5 
             #   return speed, steering_angle
 
-            radius = 1/(2.0*waypoint_y/FORWARD**2)
-            steering_angle = np.arctan(WHEELBASE/radius)
-            speed = self.select_velocity(steering_angle)
+            # radius = 1/(2.0*waypoint_y/FORWARD**2)
+            # steering_angle = np.arctan(WHEELBASE/radius)
+            # speed = self.select_velocity(steering_angle)
 
             return speed, steering_angle
 
