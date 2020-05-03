@@ -174,8 +174,8 @@ class SqnDriver(object):
 
     def __init__(self,policy,csv_path):
 
-    	self.waypoints = np.zeros((len(csv_path),1000,2))
-    	count = 0
+        self.waypoints = np.zeros((len(csv_path),1000,2))
+        count = 0
         for path in csv_path:
             self.waypoints[count,:,:] = np.loadtxt(path, ndmin=2,delimiter=',')
             count += 1
@@ -240,7 +240,7 @@ class SqnDriver(object):
         self.drive_pub = rospy.Publisher('/drive', AckermannDriveStamped, queue_size=1)
 
     def lidar_callback(self, lidar_msg):
-    	self.observations['scans'][0] = lidar_msg.ranges
+        self.observations['scans'][0] = lidar_msg.ranges
         # self.ranges = np.array(lidar_msg.ranges)
         # self.angles = np.linspace(lidar_msg.angle_min, lidar_msg.angle_max, num=self.ranges.shape[0])
         # print(self.ranges.shape)
@@ -373,35 +373,35 @@ class SqnDriver(object):
         position = np.array([pose_x, pose_y])
 
         if action in self.aval_paths:
-        	self.waypoint = self.path_waypoints[action,:2]
-        	# goal_veh= self.global_to_car(self.waypoint, position,pose_theta )
+            self.waypoint = self.path_waypoints[action,:2]
+            # goal_veh= self.global_to_car(self.waypoint, position,pose_theta )
 
-        	# L = np.sqrt((self.waypoint[0]-position[0])**2 +  (self.waypoint[0]-position[1])**2 )
+            # L = np.sqrt((self.waypoint[0]-position[0])**2 +  (self.waypoint[0]-position[1])**2 )
 
-	        # arc = 2*goal_veh[1]/(L**2)
-	        # angle = 0.33*arc
-	        # steering_angle = np.clip(angle, -0.4, 0.4)
-	        # speed = self.select_velocity(steering_angle)
+            # arc = 2*goal_veh[1]/(L**2)
+            # angle = 0.33*arc
+            # steering_angle = np.clip(angle, -0.4, 0.4)
+            # speed = self.select_velocity(steering_angle)
 
-	        waypoint_y = np.dot(np.array([np.sin(-pose_theta), np.cos(-pose_theta)]), self.waypoint-position)
+            waypoint_y = np.dot(np.array([np.sin(-pose_theta), np.cos(-pose_theta)]), self.waypoint-position)
 
-	        # if np.abs(waypoint_y) < 1e-6:
-	        # 	steering_angle= 0.
-	        # 	speed = 0.5 
-	        # 	return speed, steering_angle
+            # if np.abs(waypoint_y) < 1e-6:
+            #   steering_angle= 0.
+            #   speed = 0.5 
+            #   return speed, steering_angle
 
-	        radius = 1/(2.0*waypoint_y/FORWARD**2)
-	        steering_angle = np.arctan(WHEELBASE/radius)
-	        speed = self.select_velocity(steering_angle)
+            radius = 1/(2.0*waypoint_y/FORWARD**2)
+            steering_angle = np.arctan(WHEELBASE/radius)
+            speed = self.select_velocity(steering_angle)
 
-	        return speed, steering_angle
+            return speed, steering_angle
 
         return 0.0, 0.0
 
     
     def opp_odom_callback(self,odom_msg):
 
-    	quaternion = np.array([odom_msg.pose.pose.orientation.x, 
+        quaternion = np.array([odom_msg.pose.pose.orientation.x, 
                            odom_msg.pose.pose.orientation.y, 
                            odom_msg.pose.pose.orientation.z, 
                            odom_msg.pose.pose.orientation.w])
@@ -466,18 +466,18 @@ class SqnDriver(object):
         return velocity
 
 if __name__ == '__main__':
-	dirname = os.path.dirname(os.path.abspath(__file__)) + '/../waypoints/Multi-Paths2/'
-	# print(dirname)
-	policy = load_pytorch_policy(os.path.dirname(os.path.abspath(__file__)) + '/Model')
-	rospy.init_node('Team5_Driver_node')
+    dirname = os.path.dirname(os.path.abspath(__file__)) + '/../waypoints/Multi-Paths2/'
+    # print(dirname)
+    policy = load_pytorch_policy(os.path.dirname(os.path.abspath(__file__)) + '/Model')
+    rospy.init_node('Team5_Driver_node')
 
-	path_nums = list(range(2,18))
+    path_nums = list(range(2,18))
 
-	ego_csv_paths = []
-	for num in path_nums:
-		ego_csv_paths.append(dirname + '/multiwp%d.csv'%(num))
+    ego_csv_paths = []
+    for num in path_nums:
+        ego_csv_paths.append(dirname + '/multiwp%d.csv'%(num))
 
-	ego_csv_paths.append(dirname + '/multiwp-opt.csv') ## adding the opt path
+    ego_csv_paths.append(dirname + '/multiwp-opt.csv') ## adding the opt path
 
-	pp = SqnDriver(policy,ego_csv_paths)
-	rospy.spin()
+    pp = SqnDriver(policy,ego_csv_paths)
+    rospy.spin()
