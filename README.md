@@ -44,9 +44,10 @@ Modified from Soft Actor Critic from OpenAI SpinningUp https://spinningup.openai
  <p align="center">
   <img src="final_race/videos/rlsqn.jpg" width="70%" height="70%" >
 </p>
--Based on Clipped Double Q-learning - Fujimoto 2018   
--Outputs discrete actions   
--Using entropy regularized exploration   
+ 
+- Based on Clipped Double Q-learning - Fujimoto 2018      
+- Outputs discrete actions      
+- Using entropy regularized exploration     
 
 
 ### Overall Reinforcement Learning Training Strategy (self play, adversarial style learning)
