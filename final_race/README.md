@@ -1,16 +1,43 @@
-This is our package for Project Milestone 3
+This is our package for Project Milestone 4
 
-## Milestone 3 (Race two):
+## Milestone 4 (Final race):
 
-The main goal is to drive safely around the track by avoiding obstacles. The method we used to approach this problem is with a high level ttc style calculation to decide on which path provides the most space. We follow the waypoint associated with the best ttc path with pure pursuit in get a steering angle and velocity.
+Our solution tries to combine safety of formal methods with performance of learning based methods, given a set of spline paths, the RL-based high-level decision maker learns to choose a path to follow based on the current observations of the race
+Then our controller uses the action (decided path), confirms with TTC for availability of the path and uses pure pursuit to follow the decision.
+
 
 <p align="center">
-  <img src="videos/second_race.gif">
+  <img src="videos/rl-ttc.gif">
 </p>
 
+### Structure of SQN policy -- state to action
 
+Modified from Soft Actor Critic from OpenAI SpinningUp https://spinningup.openai.com/en/latest/
+ 
+<p align="center">
+  <img src="videos/rlsqn.jpg" width="70%" height="70%" >
+</p>
+
+-Based on Clipped Double Q-learning - Fujimoto 2018   
+-Outputs discrete actions   
+-Using entropy regularized exploration   
+
+
+### Overall Reinforcement Learning Training Strategy (self play, adversarial style learning)
+
+- Train ego agent against pure-pursuit opponent agent without notion of obstacles
+   - Did not learn a good policy because opponent agent doesn’t react
+   - Therefore...
+- Train ego agent against opponent agent following a path with TTC reaction
+- Train ego agent against the previously learned policy
+- Repeat
+
+- Some additional things
+  - Cosine learning rate schedule
+  - Randomly initialize agents to be in first or second position at start 
+ 
 We have included both the new and old f110 simulators in this repository. Make sure that the new simulator pre requisites are properly installed (docker,etc.).
-
+    
 ### To run our code:
 
   * Clone this repositpory in src folder of your ROS workspace and catkin_make the workspace (make sure you dont have a duplicate new or old F110 simulator in your workspace since that might cause issues when making the workspace)
@@ -29,6 +56,8 @@ For the new simulator:
 
 Paths
 
+We don’t use the optimized raceline but sample enough paths to all possible choices for car.
+ 
 *  We created 10 lanes that go around the track (used for the action space of our RL) and you can see them below:
   
   <p align="center">
@@ -40,4 +69,4 @@ Paths
   <p align="center">
   <img src="waypoints/Multi-Paths2/paths.png">
 </p>
-
+  
