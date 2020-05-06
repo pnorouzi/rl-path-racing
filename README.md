@@ -42,7 +42,7 @@ Then our controller uses the action (decided path), confirms with TTC for availa
 
 Modified from Soft Actor Critic from OpenAI SpinningUp https://spinningup.openai.com/en/latest/
  <p align="center">
-  <img src="videos/rlsqn.jpg" width="70%" height="70%" >
+  <img src="final_race/videos/rlsqn.jpg" width="70%" height="70%" >
 </p>
 -Based on Clipped Double Q-learning - Fujimoto 2018   
 -Outputs discrete actions   
