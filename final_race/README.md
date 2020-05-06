@@ -7,7 +7,7 @@ Then our controller uses the action (decided path), confirms with TTC for availa
 
 
 <p align="center">
-  <img src="video/rl-ttc.gif">
+  <img src="videos/rl-ttc.gif">
 </p>
 
 ### Structure of SQN policy -- state to action
