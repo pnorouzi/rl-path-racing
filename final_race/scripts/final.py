@@ -497,16 +497,16 @@ class SqnDriver(object):
     
 
     def select_velocity(self, angle):
-        if abs(angle) <= 5*np.pi/180:
+        if abs(angle) <= 5*math.pi/180:
+            velocity  = 4.5
+        elif abs(angle) <= 10*math.pi/180:
             velocity  = 4
-        elif abs(angle) <= 10*np.pi/180:
-            velocity  = 4
-        elif abs(angle) <= 15*np.pi/180:
-            velocity = 4
-        elif abs(angle) <= 20*np.pi/180:
-            velocity = 4
-        else:
+        elif abs(angle) <= 15*math.pi/180:
             velocity = 3
+        elif abs(angle) <= 20*math.pi/180:
+            velocity = 2.5
+        else:
+            velocity = 2
         return velocity
 
 if __name__ == '__main__':
