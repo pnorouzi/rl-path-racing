@@ -96,6 +96,13 @@ For the new simulator:
 
   *  Go to `f1tenth_gym_ros` folder and run the following in a new terminal: `sudo ./docker.sh`
   *  Run the following in a new terminal: `roslaunch second_race race_new.launch`
+  
+#### Final Race: moving opponent, no obstacles
+
+For the new simulator:
+
+  *  Go to `f1tenth_gym_ros` folder and run the following in a new terminal: `sudo ./docker.sh`
+  *  Run the following in a new terminal: `roslaunch final_race race_new.launch`
 
 #### Progress updates
 
