@@ -424,7 +424,7 @@ class SqnDriver(object):
         steering_angle = np.clip(angle, -0.4, 0.4)
         speed = self.select_velocity(steering_angle)
 
-        return speed, steering_angle, newaction
+        return speed, steering_angle
 
     def plan(self, action):
         #Choose the path to follow
@@ -437,8 +437,7 @@ class SqnDriver(object):
 
         if action in self.aval_paths:
             lookahead_point = self.path_waypoints[action,:2]
-            speed, steering_angle, newaction = self.get_actuation(pose_theta, lookahead_point, position)
-            print(action, newaction)
+            speed, steering_angle = self.get_actuation(pose_theta, lookahead_point, position)
             return speed, steering_angle
 
         return 0.0, 0.0
