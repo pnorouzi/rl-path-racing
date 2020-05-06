@@ -2,11 +2,11 @@
 
 We are trying to combine reinforcement learning and trajectory optimization to win in F 1/10 racing. This repository is under heavy development and is not yet stable for any use-case.
 
+Soft Q Network training of RL agent for high level decision making. https://github.com/christopher-hsu/f1tenth-spinningup
+
 ## Milestone 1 Proposal:
 
 You can read our proposal here: [Proposal](docs/Proposal.pdf)
-
-Soft Q Network training of RL agent for high level decision making. https://github.com/christopher-hsu/f1tenth-spinningup
 
 
 ## Milestone 2 (Race one):
