@@ -7,14 +7,14 @@ Then our controller uses the action (decided path), confirms with TTC for availa
 
 
 <p align="center">
-  <img src="final_race/videos/rl-ttc.gif">
+  <img src="videos/rl-ttc.gif">
 </p>
 
 ### Structure of SQN policy -- state to action
 
 Modified from Soft Actor Critic from OpenAI SpinningUp https://spinningup.openai.com/en/latest/
  <p align="center">
-  <img src="final_race/videos/rlsqn.jpg" width="70%" height="70%" >
+  <img src="videos/rlsqn.jpg" width="70%" height="70%" >
 </p>
  
 - Based on Clipped Double Q-learning - Fujimoto 2018      
