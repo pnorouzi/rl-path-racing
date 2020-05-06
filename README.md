@@ -63,8 +63,6 @@ Modified from Soft Actor Critic from OpenAI SpinningUp https://spinningup.openai
   - Cosine learning rate schedule
   - Randomly initialize agents to be in first or second position at start 
  
-We have included both the new and old f110 simulators in this repository. Make sure that the new simulator pre requisites are properly installed (docker,etc.).
-
 ## Logistics
 
 We have included both the new and old f110 simulators in this repository. Make sure that the new simulator pre requisites are properly installed (docker,etc.).
