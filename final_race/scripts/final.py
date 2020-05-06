@@ -140,7 +140,7 @@ def load_pytorch_policy(fpath, itr='', deterministic=False):
 
     action_space = spaces.Discrete(17) #16 paths + optimal
     limit = np.zeros((2,256))
-    limit[0,:(117*2)+2] = -10  #subsampled Lidar
+    limit[0,:(117*2)+2] = 0  #subsampled Lidar
     limit[1,:(117*2)+2] = 10
 
     limit[0,(117*2)+2] = -2*np.pi  #Orientation of the other car wrt our car
@@ -242,9 +242,6 @@ class SqnDriver(object):
 
     def lidar_callback(self, lidar_msg):
         self.observations['scans'][0] = lidar_msg.ranges
-        # self.ranges = np.array(lidar_msg.ranges)
-        # self.angles = np.linspace(lidar_msg.angle_min, lidar_msg.angle_max, num=self.ranges.shape[0])
-        # print(self.ranges.shape)
 
 
     def find_waypoints(self,current_position, current_theta):
@@ -403,6 +400,7 @@ class SqnDriver(object):
             ##TTC avoidance
             current_TTC = self.find_TTC(goal_veh)
             if current_TTC <= TTC_THRESHOLD:
+                # print('TTC is take over')
                 Path_TTC_vals = {}
                 goal_vals = {}
                 for path_idx in self.aval_paths:
@@ -481,7 +479,7 @@ class SqnDriver(object):
 
         decided_path = self.policy(processed_obs, self.aval_paths)
 
-        # print('decided path: ',decided_path)
+        # print('Decided rl path: ',decided_path)
 
         velocity, steering_angle = self.plan(decided_path)
 
@@ -497,16 +495,16 @@ class SqnDriver(object):
     
 
     def select_velocity(self, angle):
-        if abs(angle) <= 5*math.pi/180:
+        if abs(angle) <= 5*np.pi/180:
             velocity  = 4.5
-        elif abs(angle) <= 10*math.pi/180:
-            velocity  = 4
-        elif abs(angle) <= 15*math.pi/180:
-            velocity = 3
-        elif abs(angle) <= 20*math.pi/180:
-            velocity = 2.5
+        elif abs(angle) <= 10*np.pi/180:
+            velocity  = 4.25
+        elif abs(angle) <= 15*np.pi/180:
+            velocity = 4
+        elif abs(angle) <= 20*np.pi/180:
+            velocity = 3.5
         else:
-            velocity = 2
+            velocity = 2.5
         return velocity
 
 if __name__ == '__main__':
