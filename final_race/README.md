@@ -7,11 +7,17 @@ Then our controller uses the action (decided path), confirms with TTC for availa
 
 
 <p align="center">
-  <img src="videos/rl-ttc.gif">
+  <img src="video/rl-ttc.gif">
 </p>
 
 ### Structure of SQN policy -- state to action
+
+Modified from Soft Actor Critic from OpenAI SpinningUp https://spinningup.openai.com/en/latest/
  
+-Based on Clipped Double Q-learning - Fujimoto 2018   
+-Outputs discrete actions   
+-Using entropy regularized exploration   
+
 
 ### Overall Reinforcement Learning Training Strategy (self play, adversarial style learning)
 
