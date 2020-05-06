@@ -31,7 +31,7 @@ The main goal is to drive safely around the track by avoiding obstacles. The met
 ## Milestone 4 (Final race):
 
 Our solution tries to combine safety of formal methods with performance of learning based methods, given a set of spline paths, the RL-based high-level decision maker learns to choose a path to follow based on the current observations of the race
-Then our controller uses the action (decided path), confirms with TTC for availability of the path and uses pure pursuit to follow the decision.
+Then our controller uses the action (decided path), confirms with TTC for availability of the path and uses pure pursuit to follow the decision. In the gif below you can see how we perfrom against an opponent agent (Our agent is blue).
 
 
 <p align="center">
