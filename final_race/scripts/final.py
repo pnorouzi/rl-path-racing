@@ -20,7 +20,7 @@ import sys
 
 
 folder_name = './Model'
-FORWARD = 1
+FORWARD = 1.15
 WHEELBASE= 0.3
 SAFETY_RADIUS = 0.15
 TTC_THRESHOLD = 0.65
@@ -263,6 +263,7 @@ class SqnDriver(object):
             self.path_waypoints[key,2:] = self.waypoints[key,point_index[1][good_points][waypoint_idx_paths[key]-1],:]
 
         self.aval_paths = set(point_index[0][good_points])
+        # print(self.aval_paths)
 
 
     @staticmethod
@@ -479,7 +480,7 @@ class SqnDriver(object):
 
         decided_path = self.policy(processed_obs, self.aval_paths)
 
-        # print('Decided rl path: ',decided_path)
+        # print('Decidesd rl path: ',decided_path)
 
         velocity, steering_angle = self.plan(decided_path)
 
