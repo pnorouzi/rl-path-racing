@@ -12,7 +12,7 @@ import tf
 import math
 import sys
 
-path = os.path.dirname(os.path.abspath(__file__)) + '/../waypoints/multiwp-new.csv'
+path = os.path.dirname(os.path.abspath(__file__)) + '/../waypoints/multiwp-new1.csv'
 waypoint = np.loadtxt(path, ndmin=2,delimiter=',')
 FORWARD = 0.85
 

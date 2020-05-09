@@ -20,10 +20,10 @@ import sys
 
 
 folder_name = './Model'
-FORWARD = 1.15
+FORWARD = 1.18
 WHEELBASE= 0.3
 SAFETY_RADIUS = 0.15
-TTC_THRESHOLD = 0.65
+TTC_THRESHOLD = 0.63
 MINTTCSPEED = 3.0
 
 
@@ -66,7 +66,6 @@ class MLPActionSelector(nn.Module):
             q_soft[:, mask] = -float("Inf")
 
         pi_log = self.logsoftmax(q_soft)
-
         if deterministic:
             mu = torch.argmax(pi_log)
             pi_action = mu      
@@ -499,13 +498,13 @@ class SqnDriver(object):
         if abs(angle) <= 5*np.pi/180:
             velocity  = 4.5
         elif abs(angle) <= 10*np.pi/180:
-            velocity  = 4.25
+            velocity  = 4.
         elif abs(angle) <= 15*np.pi/180:
-            velocity = 4
+            velocity = 3.75
         elif abs(angle) <= 20*np.pi/180:
-            velocity = 3.5
+            velocity = 3.25
         else:
-            velocity = 2.5
+            velocity = 2.75
         return velocity
 
 if __name__ == '__main__':
