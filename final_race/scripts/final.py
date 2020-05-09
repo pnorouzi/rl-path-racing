@@ -139,8 +139,11 @@ def load_pytorch_policy(fpath, itr='', deterministic=False):
 
     action_space = spaces.Discrete(17) #16 paths + optimal
     limit = np.zeros((2,256))
-    limit[0,:(117*2)+2] = 0  #subsampled Lidar
-    limit[1,:(117*2)+2] = 10
+    limit[0,:(117*2)] = 0  #subsampled Lidar
+    limit[1,:(117*2)] = 10
+
+    limit[0,(117*2):(117*2)+2] = -10  #Position of the other car wrt our car
+    limit[1,(117*2):(117*2)+2] = 10
 
     limit[0,(117*2)+2] = -2*np.pi  #Orientation of the other car wrt our car
     limit[1,(117*2)+2] = 2*np.pi
